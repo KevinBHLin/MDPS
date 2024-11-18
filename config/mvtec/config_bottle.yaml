@@ -1,0 +1,33 @@
+data :
+  name: MVTec  
+  data_dir: datasets/MVTec  
+  category: bottle   
+  image_size: 256 
+  batch_size: 8
+  mask : True 
+  imput_channel : 3
+
+model:
+  checkpoint_dir: checkpoints/MVTec  
+  resnet: wide_resnet101_2 
+  weight_decay: 0.05 
+  ckpt : 2000 
+  eta : 7 
+  
+  w_mask : 50
+  w : 100
+  diffusion_steps: 1000
+  mask_steps: 200
+  test_steps: 200 
+  skip : 20   
+  skip_mask: 20
+  mask0_thresholds: 0.12
+  mask_repeat : 1
+  test_repeat : 1
+
+  beta_start : 0.0001
+  beta_end : 0.02 
+  device: 'cuda' 
+  save_model: True
+  num_workers : 8
+
